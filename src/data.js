@@ -13,9 +13,8 @@ export const profile = {
   location: 'Bhopal, Madhya Pradesh, India',
   email: 'palakcchoudhary0906@gmail.com',
   phone: '+91-7000459854',
-  // TODO: replace with your real profile URLs before deploying
-  github: 'https://github.com/',
-  linkedin: 'https://linkedin.com/',
+  github: 'https://github.com/Palak2344/Profile',
+  linkedin: 'https://www.linkedin.com/in/palak-choudhary-ab5236237/',
   badges: [
     { icon: '💼', label: '3 Internships' },
     { icon: '⚡', label: 'Full-Stack MERN Developer' },
