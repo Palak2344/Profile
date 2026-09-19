@@ -11,7 +11,7 @@ export const profile = {
   ],
   lede: 'Building responsive, production-ready web applications with clean architecture — from React interfaces to Node.js APIs and MongoDB data models.',
   location: 'Bhopal, Madhya Pradesh, India',
-  email: 'palakcchoudhary0906@gmail.com',
+  email: 'palakchoudhary0906@gmail.com',
   phone: '+91-7000459854',
   github: 'https://github.com/Palak2344/Profile',
   linkedin: 'https://www.linkedin.com/in/palak-choudhary-ab5236237/',
