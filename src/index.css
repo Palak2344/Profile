@@ -237,25 +237,31 @@ header.nav {
 .deco-plus { stroke: var(--accent-2); stroke-width: 2; stroke-linecap: round; opacity: 0.9; }
 .deco-c { fill: var(--accent-2); opacity: 0.7; }
 .deco-d { fill: var(--accent); opacity: 0.7; }
-.brow { stroke: #6b4fd6; stroke-width: 3.5; stroke-linecap: round; fill: none; }
-.smile { stroke: #b5654a; stroke-width: 3; stroke-linecap: round; fill: none; }
+.brow { stroke: #2f2740; stroke-width: 4; stroke-linecap: round; fill: none; }
+.lash { stroke: #241c38; stroke-width: 3; stroke-linecap: round; fill: none; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .character { animation: floaty 5s ease-in-out infinite; }
+  .character { animation: floaty 6s ease-in-out infinite; }
+  .breathe { animation: breathe 4.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
   .eyes { animation: blink 5.4s infinite; transform-box: fill-box; transform-origin: center; }
-  .hand-left { animation: type-a 0.7s ease-in-out infinite; transform-box: fill-box; }
-  .hand-right { animation: type-b 0.7s ease-in-out infinite; transform-box: fill-box; }
+  .hand-left { animation: type-a 0.7s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .hand-right { animation: type-b 0.7s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
   .logo { animation: logo-pulse 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .codelines { animation: flicker 3s steps(1) infinite; }
+  .steam { animation: steam 2.8s ease-in-out infinite; transform-box: fill-box; }
   .deco-a { animation: floaty 4s ease-in-out infinite; }
   .deco-b { animation: floaty 5.5s ease-in-out infinite reverse; }
   .deco-c { animation: floaty 3.6s ease-in-out infinite; }
   .deco-d { animation: floaty 4.6s ease-in-out infinite reverse; }
 }
-@keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-@keyframes blink { 0%, 92%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.12); } }
-@keyframes type-a { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(2.5px); } }
-@keyframes type-b { 0%, 100% { transform: translateY(2.5px); } 50% { transform: translateY(0); } }
-@keyframes logo-pulse { 0%, 100% { opacity: 0.85; transform: scale(1); } 50% { opacity: 1; transform: scale(1.15); } }
+@keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.015); } }
+@keyframes blink { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.1); } }
+@keyframes type-a { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(2px); } }
+@keyframes type-b { 0%, 100% { transform: translateY(2px); } 50% { transform: translateY(0); } }
+@keyframes logo-pulse { 0%, 100% { opacity: 0.85; transform: scale(1); } 50% { opacity: 1; transform: scale(1.18); } }
+@keyframes flicker { 0%, 100% { opacity: 1; } 50% { opacity: 0.82; } }
+@keyframes steam { 0% { opacity: 0; transform: translateY(4px); } 40% { opacity: 0.55; } 100% { opacity: 0; transform: translateY(-8px); } }
 
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; gap: 20px; }
