@@ -1,4 +1,4 @@
-import { profile } from '../data'
+import { profile, mailtoHref } from '../data'
 import { useTypewriter } from '../hooks'
 import { IconGithub, IconLinkedin, IconMail, IconPin } from './Icons'
 
@@ -33,7 +33,7 @@ export default function Hero() {
           <a className="social" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
             <IconLinkedin /> LinkedIn
           </a>
-          <a className="social" href={`mailto:${profile.email}`}>
+          <a className="social" href={mailtoHref}>
             <IconMail /> Email
           </a>
         </div>

@@ -1,4 +1,4 @@
-import { profile } from '../data'
+import { profile, mailtoHref } from '../data'
 import { useReveal } from '../hooks'
 import {
   IconMail,
@@ -58,7 +58,7 @@ export default function Contact() {
             I'll get back to you soon.
           </p>
           <div className="contact-row">
-            <a className="btn btn-primary" href={`mailto:${profile.email}`}>
+            <a className="btn btn-primary" href={mailtoHref}>
               <IconMail /> {profile.email}
             </a>
             <a className="btn btn-ghost" href={`tel:${profile.phone.replace(/[^+\d]/g, '')}`}>

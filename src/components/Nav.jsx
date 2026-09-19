@@ -1,4 +1,4 @@
-import { profile } from '../data'
+import { profile, mailtoHref } from '../data'
 import { useTheme, usePrefersDark } from '../hooks'
 import { IconSun, IconMoon } from './Icons'
 
@@ -23,7 +23,7 @@ export default function Nav() {
           <a className="nl" href="#experience">Experience</a>
           <a className="nl" href="#projects">Projects</a>
           <a className="nl" href="#education">Education</a>
-          <a className="btn-touch" href={`mailto:${profile.email}`}>Get in touch</a>
+          <a className="btn-touch" href={mailtoHref}>Get in touch</a>
           <button
             className="theme-btn"
             onClick={toggle}
