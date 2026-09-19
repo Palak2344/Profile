@@ -48,6 +48,26 @@ export const IconMoon = (props) => (
   </S>
 )
 
+export const IconCode = (props) => (
+  <S {...props}>
+    <path d="m16 18 6-6-6-6M8 6l-6 6 6 6" />
+  </S>
+)
+
+export const IconDownload = (props) => (
+  <S {...props}>
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+    <path d="M7 10l5 5 5-5M12 15V3" />
+  </S>
+)
+
+export const IconExternal = (props) => (
+  <S {...props}>
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+    <path d="M15 3h6v6M10 14 21 3" />
+  </S>
+)
+
 // Skill-group icons, keyed by the `icon` string in data.js
 export const skillIcons = {
   code: (p) => (<S {...p}><path d="m16 18 6-6-6-6M8 6l-6 6 6 6" /></S>),

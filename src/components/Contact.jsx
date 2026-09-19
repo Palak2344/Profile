@@ -1,6 +1,14 @@
 import { profile } from '../data'
 import { useReveal } from '../hooks'
-import { IconMail, IconPhone, IconGithub, IconLinkedin } from './Icons'
+import {
+  IconMail,
+  IconPhone,
+  IconGithub,
+  IconLinkedin,
+  IconCode,
+  IconDownload,
+  IconExternal,
+} from './Icons'
 
 export default function Contact() {
   const resumeRef = useReveal()
@@ -11,12 +19,28 @@ export default function Contact() {
       <section id="resume">
         <div className="wrap reveal" ref={resumeRef}>
           <div className="resume-cta">
-            <span className="eyebrow">Résumé</span>
-            <h3>Take a look at my full resume</h3>
-            <p>Everything about my experience, skills, projects, and education — in one page.</p>
-            <div className="btn-row">
-              <a className="btn btn-primary" href={`mailto:${profile.email}`}>
-                <IconMail /> Request a copy
+            <div className="resume-ico">
+              <IconCode />
+            </div>
+            <div className="resume-text">
+              <span className="eyebrow">Résumé</span>
+              <h3>Take a look at my full resume</h3>
+              <p>
+                View it right here or download a PDF copy — everything about my experience, skills,
+                and education in one page.
+              </p>
+            </div>
+            <div className="resume-actions">
+              <a
+                className="btn btn-primary"
+                href={profile.resumeFile}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconExternal /> View Resume
+              </a>
+              <a className="btn btn-ghost" href={profile.resumeFile} download>
+                <IconDownload /> Download PDF
               </a>
             </div>
           </div>

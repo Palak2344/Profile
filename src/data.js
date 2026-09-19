@@ -15,6 +15,8 @@ export const profile = {
   phone: '+91-7000459854',
   github: 'https://github.com/Palak2344/Profile',
   linkedin: 'https://www.linkedin.com/in/palak-choudhary-ab5236237/',
+  // Resume PDF served from /public — opens in a new tab or downloads
+  resumeFile: '/Palak_Choudhary_Resume.pdf',
   badges: [
     { icon: '💼', label: '3 Internships' },
     { icon: '⚡', label: 'Full-Stack MERN Developer' },
