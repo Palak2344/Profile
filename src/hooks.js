@@ -85,6 +85,34 @@ export function usePrefersDark() {
   return dark
 }
 
+// Returns a unit vector {x, y} pointing from the element toward the cursor,
+// for eyes/head that track the mouse. Stays neutral under reduced-motion.
+export function useEyeTracking(ref) {
+  const [dir, setDir] = useState({ x: 0, y: 0 })
+  useEffect(() => {
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduce) return
+    let last = 0
+    const onMove = (e) => {
+      const now = e.timeStamp || Date.now()
+      if (now - last < 24) return // throttle to ~40fps
+      last = now
+      const el = ref.current
+      if (!el) return
+      const r = el.getBoundingClientRect()
+      const cx = r.left + r.width / 2
+      const cy = r.top + r.height * 0.42
+      const dx = e.clientX - cx
+      const dy = e.clientY - cy
+      const dist = Math.hypot(dx, dy) || 1
+      setDir({ x: dx / dist, y: dy / dist })
+    }
+    window.addEventListener('mousemove', onMove)
+    return () => window.removeEventListener('mousemove', onMove)
+  }, [ref])
+  return dir
+}
+
 // Theme toggle: 'light' | 'dark' | null (follow system). Persists per-browser.
 export function useTheme() {
   const [theme, setTheme] = useState(null)

@@ -209,7 +209,68 @@ header.nav {
 .theme-btn svg { width: 18px; height: 18px; }
 
 /* ---------- Hero ---------- */
-.hero { padding-block: 70px 40px; text-align: center; }
+.hero { padding-block: 64px 40px; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 40px;
+  align-items: center;
+}
+.hero-content { text-align: left; }
+.hero-content .badges,
+.hero-content .socials-row { justify-content: flex-start; }
+.hero-content .lede { margin-inline: 0; }
+.hero-content .scroll-ind { align-items: flex-start; margin-top: 36px; }
+
+/* character illustration */
+.hero-art { display: flex; justify-content: center; align-items: center; }
+.art-svg { width: 100%; max-width: 380px; height: auto; }
+.art-panel { fill: var(--surface); stroke: var(--border); stroke-width: 1; }
+.deco-code {
+  font-family: var(--font-mono);
+  font-size: 26px;
+  font-weight: 600;
+  fill: var(--accent);
+  opacity: 0.75;
+}
+.deco-chip { fill: none; stroke: var(--accent-2); stroke-width: 2; opacity: 0.8; }
+.deco-plus { stroke: var(--accent-2); stroke-width: 2; stroke-linecap: round; opacity: 0.9; }
+.deco-c { fill: var(--accent-2); opacity: 0.7; }
+.deco-d { fill: var(--accent); opacity: 0.7; }
+.brow { stroke: #6b4fd6; stroke-width: 3.5; stroke-linecap: round; fill: none; }
+.smile { stroke: #b5654a; stroke-width: 3; stroke-linecap: round; fill: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .character { animation: floaty 5s ease-in-out infinite; }
+  .eyes { animation: blink 5.4s infinite; transform-box: fill-box; transform-origin: center; }
+  .hand-left { animation: type-a 0.7s ease-in-out infinite; transform-box: fill-box; }
+  .hand-right { animation: type-b 0.7s ease-in-out infinite; transform-box: fill-box; }
+  .logo { animation: logo-pulse 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .deco-a { animation: floaty 4s ease-in-out infinite; }
+  .deco-b { animation: floaty 5.5s ease-in-out infinite reverse; }
+  .deco-c { animation: floaty 3.6s ease-in-out infinite; }
+  .deco-d { animation: floaty 4.6s ease-in-out infinite reverse; }
+}
+@keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes blink { 0%, 92%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.12); } }
+@keyframes type-a { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(2.5px); } }
+@keyframes type-b { 0%, 100% { transform: translateY(2.5px); } 50% { transform: translateY(0); } }
+@keyframes logo-pulse { 0%, 100% { opacity: 0.85; transform: scale(1); } 50% { opacity: 1; transform: scale(1.15); } }
+
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 20px; }
+  .hero-content { text-align: center; order: 2; }
+  .hero-content .badges,
+  .hero-content .socials-row { justify-content: center; }
+  .hero-content .lede { margin-inline: auto; }
+  .hero-content .scroll-ind { align-items: center; }
+  .hero-art { order: 1; }
+  .art-svg { max-width: 300px; }
+}
+@media (max-width: 420px) {
+  .art-svg { max-width: 240px; }
+}
+
 .hero .hi {
   display: inline-block;
   font-size: 15px;
