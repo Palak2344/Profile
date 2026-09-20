@@ -1,15 +1,13 @@
 import { profile, mailtoHref } from '../data'
 import { useTypewriter } from '../hooks'
 import { IconGithub, IconLinkedin, IconMail, IconPin } from './Icons'
-import AnimeCharacter from './AnimeCharacter'
 
 export default function Hero() {
   const typed = useTypewriter(profile.roles)
 
   return (
     <section className="hero">
-      <div className="wrap hero-grid">
-        <div className="hero-content">
+      <div className="wrap hero-content">
         <span className="hi">👋 Hi, I'm</span>
         <h1>
           {profile.firstName} <span className="last">{profile.lastName}</span>
@@ -50,9 +48,6 @@ export default function Hero() {
           <div className="mouse" />
           <span>SCROLL</span>
         </div>
-        </div>
-
-        <AnimeCharacter />
       </div>
     </section>
   )
