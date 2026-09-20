@@ -237,31 +237,48 @@ header.nav {
 .deco-plus { stroke: var(--accent-2); stroke-width: 2; stroke-linecap: round; opacity: 0.9; }
 .deco-c { fill: var(--accent-2); opacity: 0.7; }
 .deco-d { fill: var(--accent); opacity: 0.7; }
-.brow { stroke: #2f2740; stroke-width: 4; stroke-linecap: round; fill: none; }
-.lash { stroke: #241c38; stroke-width: 3; stroke-linecap: round; fill: none; }
+.brow { stroke: #6b3f22; stroke-width: 4; stroke-linecap: round; fill: none; }
+.chest-code { font-family: var(--font-mono); font-size: 20px; font-weight: 700; fill: #eef0f2; }
 
 @media (prefers-reduced-motion: no-preference) {
   .character { animation: floaty 6s ease-in-out infinite; }
   .breathe { animation: breathe 4.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center bottom; }
   .eyes { animation: blink 5.4s infinite; transform-box: fill-box; transform-origin: center; }
-  .hand-left { animation: type-a 0.7s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
-  .hand-right { animation: type-b 0.7s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
   .logo { animation: logo-pulse 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
-  .codelines { animation: flicker 3s steps(1) infinite; }
   .steam { animation: steam 2.8s ease-in-out infinite; transform-box: fill-box; }
-  .deco-a { animation: floaty 4s ease-in-out infinite; }
-  .deco-b { animation: floaty 5.5s ease-in-out infinite reverse; }
-  .deco-c { animation: floaty 3.6s ease-in-out infinite; }
-  .deco-d { animation: floaty 4.6s ease-in-out infinite reverse; }
+  .leds { animation: flicker 1.6s steps(1) infinite; }
+  .node-a { animation: floaty 4s ease-in-out infinite; }
+  .node-b { animation: floaty 5.2s ease-in-out infinite reverse; }
+  .node-c { animation: floaty 3.6s ease-in-out infinite; }
+  .flow-a { animation: flow-a 2.6s linear infinite; }
+  .flow-b { animation: flow-b 3s linear infinite; }
+  .flow-c { animation: flow-c 2.4s linear infinite; }
 }
 @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 @keyframes breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.015); } }
 @keyframes blink { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.1); } }
-@keyframes type-a { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(2px); } }
-@keyframes type-b { 0%, 100% { transform: translateY(2px); } 50% { transform: translateY(0); } }
 @keyframes logo-pulse { 0%, 100% { opacity: 0.85; transform: scale(1); } 50% { opacity: 1; transform: scale(1.18); } }
-@keyframes flicker { 0%, 100% { opacity: 1; } 50% { opacity: 0.82; } }
-@keyframes steam { 0% { opacity: 0; transform: translateY(4px); } 40% { opacity: 0.55; } 100% { opacity: 0; transform: translateY(-8px); } }
+@keyframes flicker { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+@keyframes steam { 0% { opacity: 0; transform: translateY(4px); } 40% { opacity: 0.55; } 100% { opacity: 0; transform: translateY(-10px); } }
+/* data flowing along the connector lines (start point + travel offset) */
+@keyframes flow-a {
+  0% { transform: translate(208px, 84px); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translate(258px, 150px); opacity: 0; }
+}
+@keyframes flow-b {
+  0% { transform: translate(272px, 78px); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translate(228px, 132px); opacity: 0; }
+}
+@keyframes flow-c {
+  0% { transform: translate(130px, 162px); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translate(158px, 206px); opacity: 0; }
+}
 
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; gap: 20px; }
