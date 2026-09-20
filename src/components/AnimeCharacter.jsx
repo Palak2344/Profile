@@ -136,38 +136,45 @@ export default function AnimeCharacter() {
               {/* face */}
               <path d="M170 176 Q170 108 230 108 Q290 108 290 176 Q290 224 254 240 Q230 250 206 240 Q170 224 170 176 Z" fill="url(#skin)" />
               {/* blush */}
-              <ellipse cx="192" cy="202" rx="13" ry="8" fill="#ff9d8f" opacity="0.5" />
-              <ellipse cx="268" cy="202" rx="13" ry="8" fill="#ff9d8f" opacity="0.5" />
+              <ellipse cx="190" cy="204" rx="15" ry="9" fill="#ff9d8f" opacity="0.55" />
+              <ellipse cx="270" cy="204" rx="15" ry="9" fill="#ff9d8f" opacity="0.55" />
 
               {/* eyebrows */}
-              <path d="M182 150 q18 -6 34 0" className="brow" />
-              <path d="M244 150 q18 -6 34 0" className="brow" />
+              <path d="M184 148 q18 -7 34 -1" className="brow" />
+              <path d="M242 147 q18 -6 34 1" className="brow" />
 
-              {/* big eyes */}
+              {/* big kawaii eyes */}
               <g className="eyes">
-                <ellipse cx="205" cy="180" rx="16" ry="19" fill="#fff" />
-                <ellipse cx="255" cy="180" rx="16" ry="19" fill="#fff" />
+                <ellipse cx="205" cy="183" rx="18" ry="21" fill="#fff" />
+                <ellipse cx="255" cy="183" rx="18" ry="21" fill="#fff" />
                 <g className="irises" transform={iris}>
-                  <circle cx="205" cy="181" r="11" fill="#4a2e1a" />
-                  <circle cx="205" cy="181" r="5.5" fill="#1a1008" />
-                  <circle cx="208" cy="177" r="3" fill="#fff" />
-                  <circle cx="255" cy="181" r="11" fill="#4a2e1a" />
-                  <circle cx="255" cy="181" r="5.5" fill="#1a1008" />
-                  <circle cx="258" cy="177" r="3" fill="#fff" />
+                  {/* left */}
+                  <circle cx="205" cy="184" r="14.5" fill="#5c3a20" />
+                  <circle cx="205" cy="185" r="11" fill="#3a2312" />
+                  <circle cx="205" cy="186" r="6" fill="#170f08" />
+                  <ellipse cx="199" cy="178" rx="5" ry="6" fill="#fff" />
+                  <circle cx="210" cy="190" r="2.4" fill="#fff" opacity="0.85" />
+                  {/* right */}
+                  <circle cx="255" cy="184" r="14.5" fill="#5c3a20" />
+                  <circle cx="255" cy="185" r="11" fill="#3a2312" />
+                  <circle cx="255" cy="186" r="6" fill="#170f08" />
+                  <ellipse cx="249" cy="178" rx="5" ry="6" fill="#fff" />
+                  <circle cx="260" cy="190" r="2.4" fill="#fff" opacity="0.85" />
                 </g>
               </g>
 
               {/* round glasses */}
               <g className="glasses" fill="none" stroke="#20242e" strokeWidth="4">
-                <circle cx="205" cy="181" r="24" />
-                <circle cx="255" cy="181" r="24" />
-                <path d="M229 178 q1 -4 2 0" strokeWidth="3.5" />
-                <path d="M181 176 l-14 -6M279 176 l14 -6" strokeWidth="3.5" strokeLinecap="round" />
+                <circle cx="205" cy="183" r="26" />
+                <circle cx="255" cy="183" r="26" />
+                <path d="M231 180 q-1 -4 -2 0" strokeWidth="3.5" />
+                <path d="M179 178 l-13 -6M281 178 l13 -6" strokeWidth="3.5" strokeLinecap="round" />
               </g>
 
-              {/* nose + smile */}
-              <path d="M228 196 q2 5 4 7 q-2 2 -4 1" fill="none" stroke="#e0a074" strokeWidth="2" strokeLinecap="round" />
-              <path d="M218 214 q12 10 24 0" fill="none" stroke="#b5654a" strokeWidth="3" strokeLinecap="round" />
+              {/* nose + gentle smile */}
+              <path d="M227 198 q3 4 5 6 q-3 2 -6 0" fill="none" stroke="#e0a074" strokeWidth="2" strokeLinecap="round" />
+              <path d="M214 216 q16 13 32 0" fill="none" stroke="#a85742" strokeWidth="3.2" strokeLinecap="round" />
+              <path d="M220 219 q10 6 20 0" fill="#e0806e" opacity="0.6" />
 
               {/* bangs / fringe */}
               <path d="M158 176 Q152 108 230 100 Q308 108 302 176 Q292 140 262 132 Q250 150 230 148 Q206 152 196 132 Q168 140 158 176 Z" fill="url(#hair)" />
