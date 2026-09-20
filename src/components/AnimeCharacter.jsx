@@ -151,36 +151,36 @@ export default function AnimeCharacter() {
 
               {/* big kawaii eyes */}
               <g className="eyes">
-                <ellipse cx="205" cy="183" rx="18" ry="21" fill="#fff" />
-                <ellipse cx="255" cy="183" rx="18" ry="21" fill="#fff" />
+                <ellipse cx="205" cy="184" rx="19.5" ry="22.5" fill="#fff" />
+                <ellipse cx="255" cy="184" rx="19.5" ry="22.5" fill="#fff" />
                 <g className="irises" transform={iris}>
                   {/* left */}
-                  <circle cx="205" cy="184" r="14.5" fill="#5c3a20" />
-                  <circle cx="205" cy="185" r="11" fill="#3a2312" />
-                  <circle cx="205" cy="186" r="6" fill="#170f08" />
-                  <ellipse cx="199" cy="178" rx="5" ry="6" fill="#fff" />
-                  <circle cx="210" cy="190" r="2.4" fill="#fff" opacity="0.85" />
+                  <circle cx="205" cy="185" r="16" fill="#5c3a20" />
+                  <circle cx="205" cy="186" r="12.5" fill="#3a2312" />
+                  <circle cx="205" cy="187" r="6.5" fill="#140d06" />
+                  <ellipse cx="198" cy="178" rx="5.5" ry="6.5" fill="#fff" />
+                  <circle cx="211" cy="192" r="2.6" fill="#fff" opacity="0.9" />
                   {/* right */}
-                  <circle cx="255" cy="184" r="14.5" fill="#5c3a20" />
-                  <circle cx="255" cy="185" r="11" fill="#3a2312" />
-                  <circle cx="255" cy="186" r="6" fill="#170f08" />
-                  <ellipse cx="249" cy="178" rx="5" ry="6" fill="#fff" />
-                  <circle cx="260" cy="190" r="2.4" fill="#fff" opacity="0.85" />
+                  <circle cx="255" cy="185" r="16" fill="#5c3a20" />
+                  <circle cx="255" cy="186" r="12.5" fill="#3a2312" />
+                  <circle cx="255" cy="187" r="6.5" fill="#140d06" />
+                  <ellipse cx="248" cy="178" rx="5.5" ry="6.5" fill="#fff" />
+                  <circle cx="261" cy="192" r="2.6" fill="#fff" opacity="0.9" />
                 </g>
               </g>
 
               {/* chunky round glasses */}
               <g className="glasses" fill="none" stroke="#1b1e26" strokeWidth="5.5">
-                <circle cx="205" cy="183" r="26" />
-                <circle cx="255" cy="183" r="26" />
-                <path d="M231 179 q-1 -5 -2 0" strokeWidth="4.5" />
-                <path d="M179 177 l-13 -6M281 177 l13 -6" strokeWidth="4.5" strokeLinecap="round" />
+                <circle cx="205" cy="184" r="27" />
+                <circle cx="255" cy="184" r="27" />
+                <path d="M232 180 q-2 -5 -4 0" strokeWidth="4.5" />
+                <path d="M178 178 l-13 -6M282 178 l13 -6" strokeWidth="4.5" strokeLinecap="round" />
               </g>
 
-              {/* nose + gentle smile */}
-              <path d="M227 198 q3 4 5 6 q-3 2 -6 0" fill="none" stroke="#e0a074" strokeWidth="2" strokeLinecap="round" />
-              <path d="M214 216 q16 13 32 0" fill="none" stroke="#a85742" strokeWidth="3.2" strokeLinecap="round" />
-              <path d="M220 219 q10 6 20 0" fill="#e0806e" opacity="0.6" />
+              {/* tiny nose + cute smile */}
+              <path d="M228 200 q3 4 5 5 q-3 2 -6 0" fill="none" stroke="#e0a074" strokeWidth="2" strokeLinecap="round" />
+              <path d="M212 216 q18 15 36 0" fill="none" stroke="#a85742" strokeWidth="3.4" strokeLinecap="round" />
+              <path d="M218 219 q12 8 24 0 q-12 4 -24 0 Z" fill="#e88574" />
 
               {/* bangs / fringe */}
               <path d="M158 176 Q152 108 230 100 Q308 108 302 176 Q292 140 262 132 Q250 150 230 148 Q206 152 196 132 Q168 140 158 176 Z" fill="url(#hair)" />
@@ -191,9 +191,9 @@ export default function AnimeCharacter() {
                 <path d="M274 124 q18 44 12 98" />
                 <path d="M232 112 q-4 30 -2 44" />
               </g>
-              {/* side locks */}
-              <path d="M164 172 Q156 244 190 288 L202 282 Q176 240 178 176 Z" fill="url(#hair)" />
-              <path d="M296 172 Q304 244 270 288 L258 282 Q284 240 282 176 Z" fill="url(#hair)" />
+              {/* side locks — tidy bob with inward-curl ends */}
+              <path d="M162 172 Q152 236 176 266 Q190 274 200 262 Q180 232 180 176 Z" fill="url(#hair)" />
+              <path d="M298 172 Q308 236 284 266 Q270 274 260 262 Q280 232 280 176 Z" fill="url(#hair)" />
             </g>
           </g>
 
