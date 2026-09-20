@@ -24,12 +24,12 @@ export default function AnimeCharacter() {
             <stop offset="1" stopColor="#f4bd97" />
           </linearGradient>
           <linearGradient id="hair" x1="0" y1="0" x2="0.4" y2="1">
-            <stop offset="0" stopColor="#8a4f2c" />
-            <stop offset="1" stopColor="#5f3620" />
+            <stop offset="0" stopColor="#a5542a" />
+            <stop offset="1" stopColor="#6e3418" />
           </linearGradient>
           <linearGradient id="hairHi" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#b57a45" />
-            <stop offset="1" stopColor="#8a4f2c" stopOpacity="0" />
+            <stop offset="0" stopColor="#d08a4c" />
+            <stop offset="1" stopColor="#a5542a" stopOpacity="0" />
           </linearGradient>
           <linearGradient id="hoodie" x1="0" y1="0" x2="0.3" y2="1">
             <stop offset="0" stopColor="#f0584a" />
@@ -121,8 +121,14 @@ export default function AnimeCharacter() {
             {/* inner dark shirt with code symbol */}
             <path d="M208 282 Q230 306 252 282 L252 340 Q230 356 208 340 Z" fill="#262b36" />
             <text x="230" y="322" className="chest-code" textAnchor="middle">&lt;/&gt;</text>
-            {/* hoodie zipper + pocket */}
+            {/* hoodie zipper + drawstrings + pocket */}
             <line x1="230" y1="300" x2="230" y2="404" stroke="#a82c22" strokeWidth="3" />
+            <g stroke="#f2efe9" strokeWidth="3.4" strokeLinecap="round" fill="none">
+              <path d="M216 292 q-3 26 -5 42" />
+              <path d="M244 292 q3 26 5 42" />
+            </g>
+            <circle cx="211" cy="336" r="3.6" fill="#f2efe9" />
+            <circle cx="249" cy="336" r="3.6" fill="#f2efe9" />
             <path d="M186 356 h88 l-10 30 h-68 Z" fill="#d8habe" opacity="0" />
             <path d="M188 360 q42 14 84 0 l-8 26 q-34 12 -68 0 Z" fill="#d94436" />
 
@@ -163,12 +169,12 @@ export default function AnimeCharacter() {
                 </g>
               </g>
 
-              {/* round glasses */}
-              <g className="glasses" fill="none" stroke="#20242e" strokeWidth="4">
+              {/* chunky round glasses */}
+              <g className="glasses" fill="none" stroke="#1b1e26" strokeWidth="5.5">
                 <circle cx="205" cy="183" r="26" />
                 <circle cx="255" cy="183" r="26" />
-                <path d="M231 180 q-1 -4 -2 0" strokeWidth="3.5" />
-                <path d="M179 178 l-13 -6M281 178 l13 -6" strokeWidth="3.5" strokeLinecap="round" />
+                <path d="M231 179 q-1 -5 -2 0" strokeWidth="4.5" />
+                <path d="M179 177 l-13 -6M281 177 l13 -6" strokeWidth="4.5" strokeLinecap="round" />
               </g>
 
               {/* nose + gentle smile */}
@@ -179,6 +185,12 @@ export default function AnimeCharacter() {
               {/* bangs / fringe */}
               <path d="M158 176 Q152 108 230 100 Q308 108 302 176 Q292 140 262 132 Q250 150 230 148 Q206 152 196 132 Q168 140 158 176 Z" fill="url(#hair)" />
               <path d="M230 100 Q176 106 164 160 Q200 120 232 126 Z" fill="url(#hairHi)" opacity="0.6" />
+              {/* highlight streaks */}
+              <g stroke="#d08a4c" strokeWidth="3" strokeLinecap="round" fill="none" opacity="0.55">
+                <path d="M188 126 q-16 44 -12 96" />
+                <path d="M274 124 q18 44 12 98" />
+                <path d="M232 112 q-4 30 -2 44" />
+              </g>
               {/* side locks */}
               <path d="M164 172 Q156 244 190 288 L202 282 Q176 240 178 176 Z" fill="url(#hair)" />
               <path d="M296 172 Q304 244 270 288 L258 282 Q284 240 282 176 Z" fill="url(#hair)" />
