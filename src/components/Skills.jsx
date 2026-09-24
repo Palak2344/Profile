@@ -23,11 +23,17 @@ export default function Skills() {
                   <span className="sc-ico">{Icon && <Icon />}</span>
                   <h3>{group.title}</h3>
                 </div>
-                <div className="tags">
-                  {group.items.map((t) => (
-                    <span className="tag" key={t}>
-                      {t}
-                    </span>
+                <div className="skill-bars">
+                  {group.items.map((s) => (
+                    <div className="skill-row" key={s.name}>
+                      <div className="skill-row-top">
+                        <span>{s.name}</span>
+                        <span className="pct">{s.level}%</span>
+                      </div>
+                      <div className="bar">
+                        <span className="bar-fill" style={{ '--lvl': `${s.level}%` }} />
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>

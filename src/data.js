@@ -34,12 +34,69 @@ export const about = {
 }
 
 export const skills = [
-  { icon: 'code', title: 'Languages', items: ['JavaScript', 'TypeScript', 'Python', 'SQL'] },
-  { icon: 'window', title: 'Frontend', items: ['React.js', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap'] },
-  { icon: 'server', title: 'Backend', items: ['Node.js', 'Express.js', 'REST APIs', 'JWT Auth'] },
-  { icon: 'database', title: 'Databases', items: ['MongoDB', 'MySQL'] },
-  { icon: 'tools', title: 'Tools & Cloud', items: ['Git', 'GitHub', 'Docker', 'AWS', 'Vercel', 'CI/CD', 'Postman'] },
-  { icon: 'concepts', title: 'Concepts', items: ['MERN Stack', 'MVC', 'CRUD', 'Agile', 'API Integration'] },
+  {
+    icon: 'code',
+    title: 'Languages',
+    items: [
+      { name: 'JavaScript', level: 90 },
+      { name: 'TypeScript', level: 80 },
+      { name: 'Python', level: 75 },
+      { name: 'SQL', level: 78 },
+    ],
+  },
+  {
+    icon: 'window',
+    title: 'Frontend',
+    items: [
+      { name: 'React.js', level: 90 },
+      { name: 'HTML5', level: 95 },
+      { name: 'CSS3', level: 90 },
+      { name: 'Tailwind CSS', level: 85 },
+      { name: 'Bootstrap', level: 80 },
+    ],
+  },
+  {
+    icon: 'server',
+    title: 'Backend',
+    items: [
+      { name: 'Node.js', level: 88 },
+      { name: 'Express.js', level: 87 },
+      { name: 'REST APIs', level: 88 },
+      { name: 'JWT Auth', level: 82 },
+    ],
+  },
+  {
+    icon: 'database',
+    title: 'Databases',
+    items: [
+      { name: 'MongoDB', level: 88 },
+      { name: 'MySQL', level: 80 },
+    ],
+  },
+  {
+    icon: 'tools',
+    title: 'Tools & Cloud',
+    items: [
+      { name: 'Git', level: 88 },
+      { name: 'GitHub', level: 90 },
+      { name: 'Docker', level: 72 },
+      { name: 'AWS', level: 70 },
+      { name: 'Vercel', level: 85 },
+      { name: 'CI/CD', level: 72 },
+      { name: 'Postman', level: 85 },
+    ],
+  },
+  {
+    icon: 'concepts',
+    title: 'Concepts',
+    items: [
+      { name: 'MERN Stack', level: 90 },
+      { name: 'MVC', level: 82 },
+      { name: 'CRUD', level: 92 },
+      { name: 'Agile', level: 80 },
+      { name: 'API Integration', level: 88 },
+    ],
+  },
 ]
 
 export const experience = [
