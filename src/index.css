@@ -4,6 +4,7 @@
   --bg-2: #ece6f6;
   --surface: rgba(24, 12, 48, 0.035);
   --surface-2: rgba(24, 12, 48, 0.055);
+  --card: #ffffff;
   --text: #1b1430;
   --muted: #5b5470;
   --faint: #8a839c;
@@ -31,6 +32,7 @@
     --bg-2: #0f0b1a;
     --surface: rgba(255, 255, 255, 0.035);
     --surface-2: rgba(255, 255, 255, 0.06);
+    --card: #17131f;
     --text: #edeaf5;
     --muted: #a49fb8;
     --faint: #74708a;
@@ -51,6 +53,7 @@
   --bg-2: #0f0b1a;
   --surface: rgba(255, 255, 255, 0.035);
   --surface-2: rgba(255, 255, 255, 0.06);
+  --card: #17131f;
   --text: #edeaf5;
   --muted: #a49fb8;
   --faint: #74708a;
@@ -641,12 +644,13 @@ section { padding-block: 64px; scroll-margin-top: 82px; }
   position: absolute;
   top: 0;
   left: 50%;
-  width: min(480px, 88vw);
-  min-height: 320px;
+  width: min(440px, 84vw);
+  min-height: 300px;
   padding: 28px;
   border-radius: 22px;
   border: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  background-color: var(--card);
+  background-image: linear-gradient(180deg, var(--surface-2), transparent);
   box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.5);
   transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.45s ease, box-shadow 0.3s;
   cursor: pointer;
@@ -690,6 +694,32 @@ section { padding-block: 64px; scroll-margin-top: 82px; }
 .front .dc-tag:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); background: var(--accent-soft); }
 .dc-dot { color: var(--accent-2); }
 .deck-card:not(.front) .dc-tag { pointer-events: none; }
+
+.deck-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 60;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 26px -12px rgba(0, 0, 0, 0.6);
+  transition: color 0.16s, border-color 0.16s, transform 0.15s, background 0.16s;
+}
+.deck-arrow svg { width: 20px; height: 20px; }
+.deck-arrow.left { left: 6px; }
+.deck-arrow.right { right: 6px; }
+.deck-arrow:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); transform: translateY(-50%) scale(1.08); }
+@media (min-width: 640px) {
+  .deck-arrow.left { left: calc(50% - 296px); }
+  .deck-arrow.right { right: calc(50% - 296px); }
+}
 
 .deck-dots { display: flex; justify-content: center; gap: 9px; margin-top: 26px; }
 .dot-btn {
