@@ -551,13 +551,37 @@ section { padding-block: 64px; scroll-margin-top: 82px; }
   border: 1px solid var(--border);
   background: linear-gradient(180deg, var(--surface-2), var(--surface));
   transition: transform 0.18s, border-color 0.18s, box-shadow 0.2s;
+  cursor: pointer;
+  user-select: none;
 }
 .skill-card:hover {
   transform: translateY(-4px);
   border-color: var(--border-strong);
   box-shadow: 0 20px 44px -22px var(--accent);
 }
+.skill-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.skill-card.active {
+  transform: translateY(-4px) scale(1.015);
+  border-color: var(--accent);
+  box-shadow: 0 26px 56px -24px var(--accent);
+}
+.skill-card.active .sc-ico { box-shadow: 0 0 0 4px var(--accent-soft); }
+.skill-card.active .bar-fill { background: linear-gradient(90deg, var(--accent-2), var(--accent)); }
+.skill-card.active .pct { color: var(--accent-2); }
 .skill-card .sc-top { display: flex; align-items: center; gap: 11px; margin-bottom: 16px; }
+.sc-toggle {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 17px;
+  line-height: 1;
+  color: var(--accent);
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  border: 1px solid var(--border-strong);
+}
 .skill-card .sc-ico {
   width: 36px;
   height: 36px;
