@@ -122,3 +122,43 @@ export const certifications = [
   { star: '★', name: 'AWS Training Program', meta: 'LinuxWorld · Apr 2022' },
   { star: '🏆', name: 'Round 2 Participant — ECLearnix Quick Solvathon', meta: 'Sep 2025' },
 ]
+
+export const services = [
+  {
+    icon: 'window',
+    title: 'Frontend Development',
+    desc: 'Responsive, accessible interfaces built with React.js, Tailwind CSS, and a clean, reusable component architecture.',
+  },
+  {
+    icon: 'server',
+    title: 'Backend & APIs',
+    desc: 'RESTful APIs, CRUD workflows, and JWT authentication powered by Node.js, Express, and MongoDB.',
+  },
+  {
+    icon: 'database',
+    title: 'Full-Stack MERN',
+    desc: 'End-to-end applications — from MongoDB data models and Express APIs to deployed React frontends on Vercel.',
+  },
+]
+
+export const stats = [
+  { value: 3, suffix: '', label: 'Internships' },
+  { value: 4, suffix: '+', label: 'Apps Shipped' },
+  { value: 5, suffix: '', label: 'Featured Projects' },
+  { value: 9, suffix: '.0', label: 'MCA SGPA' },
+]
+
+export const marquee = [
+  'React.js', 'Node.js', 'Express.js', 'MongoDB', 'JavaScript', 'TypeScript',
+  'Tailwind CSS', 'REST APIs', 'JWT Auth', 'Docker', 'AWS', 'Git', 'CI/CD',
+  'MySQL', 'Python', 'MVC', 'Agile',
+]
+
+export const heroSnippets = [
+  { text: "const dev = 'Palak';", top: '14%', left: '6%', delay: '0s' },
+  { text: '<Portfolio />', top: '24%', right: '7%', delay: '1.2s' },
+  { text: '{ mern: true }', top: '62%', left: '5%', delay: '0.6s' },
+  { text: 'npm run build', top: '70%', right: '8%', delay: '1.8s' },
+  { text: 'git push origin', top: '42%', left: '10%', delay: '2.4s' },
+  { text: 'await fetch(api)', top: '48%', right: '11%', delay: '0.9s' },
+]

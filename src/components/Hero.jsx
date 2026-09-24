@@ -1,4 +1,4 @@
-import { profile, mailtoHref } from '../data'
+import { profile, mailtoHref, heroSnippets } from '../data'
 import { useTypewriter } from '../hooks'
 import { IconGithub, IconLinkedin, IconMail, IconPin } from './Icons'
 
@@ -7,6 +7,17 @@ export default function Hero() {
 
   return (
     <section className="hero">
+      <div className="hero-snippets" aria-hidden="true">
+        {heroSnippets.map((s, i) => (
+          <span
+            key={i}
+            className="snippet"
+            style={{ top: s.top, left: s.left, right: s.right, animationDelay: s.delay }}
+          >
+            {s.text}
+          </span>
+        ))}
+      </div>
       <div className="wrap hero-content">
         <span className="hi">👋 Hi, I'm</span>
         <h1>
