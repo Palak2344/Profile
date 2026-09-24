@@ -695,6 +695,13 @@ section { padding-block: 64px; scroll-margin-top: 82px; }
 .dc-dot { color: var(--accent-2); }
 .deck-card:not(.front) .dc-tag { pointer-events: none; }
 .deck-card:not(.front) { filter: saturate(0.85); }
+.deck-card:not(.front):hover {
+  border-color: var(--accent);
+  filter: saturate(1) brightness(1.08);
+  box-shadow: 0 34px 66px -28px var(--accent);
+}
+.deck:focus-visible { outline: none; }
+.deck:focus-visible .deck-card.front { box-shadow: 0 40px 80px -30px var(--accent), 0 0 0 2px var(--accent); }
 
 .deck-arrow {
   position: absolute;
