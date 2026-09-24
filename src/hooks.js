@@ -68,6 +68,50 @@ export function useTypewriter(words, { typeSpeed = 70, deleteSpeed = 38, holdTim
   return text
 }
 
+// Counts up from 0 to `end` once the returned ref scrolls into view.
+export function useCountUp(end, duration = 1400) {
+  const ref = useRef(null)
+  const [value, setValue] = useState(0)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduce || !('IntersectionObserver' in window)) {
+      setValue(end)
+      return
+    }
+    let raf
+    let started = false
+    const run = (t0) => {
+      const step = (now) => {
+        const p = Math.min((now - t0) / duration, 1)
+        const eased = 1 - Math.pow(1 - p, 3)
+        setValue(end * eased)
+        if (p < 1) raf = requestAnimationFrame(step)
+      }
+      raf = requestAnimationFrame(step)
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting && !started) {
+            started = true
+            run(performance.now())
+            io.unobserve(en.target)
+          }
+        })
+      },
+      { threshold: 0.4 }
+    )
+    io.observe(el)
+    return () => {
+      io.disconnect()
+      cancelAnimationFrame(raf)
+    }
+  }, [end, duration])
+  return [ref, value]
+}
+
 // Tracks the OS-level color scheme, updating if the user changes it.
 export function usePrefersDark() {
   const [dark, setDark] = useState(
