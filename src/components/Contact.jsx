@@ -58,7 +58,7 @@ export default function Contact() {
             I'll get back to you soon.
           </p>
           <div className="contact-row">
-            <a className="btn btn-primary" href={mailtoHref}>
+            <a className="btn btn-primary" href={mailtoHref} target="_blank" rel="noopener noreferrer">
               <IconMail /> {profile.email}
             </a>
             <a className="btn btn-ghost" href={`tel:${profile.phone.replace(/[^+\d]/g, '')}`}>

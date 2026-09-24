@@ -44,7 +44,7 @@ export default function Hero() {
           <a className="social" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
             <IconLinkedin /> LinkedIn
           </a>
-          <a className="social" href={mailtoHref}>
+          <a className="social" href={mailtoHref} target="_blank" rel="noopener noreferrer">
             <IconMail /> Email
           </a>
         </div>

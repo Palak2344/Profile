@@ -23,7 +23,7 @@ export default function Nav() {
           <a className="nl" href="#experience">Experience</a>
           <a className="nl" href="#projects">Projects</a>
           <a className="nl" href="#education">Education</a>
-          <a className="btn-touch" href={mailtoHref}>Get in touch</a>
+          <a className="btn-touch" href={mailtoHref} target="_blank" rel="noopener noreferrer">Get in touch</a>
           <button
             className="theme-btn"
             onClick={toggle}

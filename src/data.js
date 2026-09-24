@@ -24,10 +24,10 @@ export const profile = {
   ],
 }
 
-// Pre-addressed mail link (opens the visitor's mail app to send Palak an email).
-export const mailtoHref = `mailto:${profile.email}?subject=${encodeURIComponent(
-  'Hello Palak — reaching out from your portfolio'
-)}`
+// Opens Gmail's compose window (new tab), pre-addressed to Palak with a subject.
+export const mailtoHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+  profile.email
+)}&su=${encodeURIComponent('Hello Palak — reaching out from your portfolio')}`
 
 export const about = {
   chips: ['Clean Code', 'API Integration', 'Responsive Design', 'Problem Solving'],
