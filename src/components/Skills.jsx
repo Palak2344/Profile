@@ -1,66 +1,125 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { skills } from '../data'
-import { useReveal } from '../hooks'
 import { skillIcons } from './Icons'
 
-export default function Skills() {
-  const ref = useReveal()
-  const [active, setActive] = useState(null)
+const levelLabel = (lvl) =>
+  lvl >= 90 ? 'Expert' : lvl >= 80 ? 'Advanced' : lvl >= 70 ? 'Proficient' : lvl >= 60 ? 'Intermediate' : 'Familiar'
 
-  const toggle = (i) => setActive((cur) => (cur === i ? null : i))
+export default function Skills() {
+  const n = skills.length
+  const [active, setActive] = useState(0)
+  const [modal, setModal] = useState(null) // { group, skill }
+
+  // circular signed distance from the focused card
+  const offsetOf = (i) => {
+    let d = i - active
+    if (d > n / 2) d -= n
+    if (d < -n / 2) d += n
+    return d
+  }
+
+  // close modal on Escape
+  useEffect(() => {
+    if (!modal) return
+    const onKey = (e) => e.key === 'Escape' && setModal(null)
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [modal])
 
   return (
     <section id="skills">
-      <div className="wrap reveal" ref={ref}>
-        <div className="sec-head">
+      <div className="wrap">
+        <div className="sec-head deck-head">
           <span className="eyebrow">Toolbox</span>
           <h2>Skills &amp; Technologies</h2>
-          <p className="sub">Tap a card to focus it and see my proficiency in each skill.</p>
+          <p className="sub">Click a card to bring it to front · tap any skill to see my proficiency.</p>
         </div>
-        <div className="skill-grid">
+
+        <div className="deck">
           {skills.map((group, i) => {
+            const off = offsetOf(i)
+            const abs = Math.abs(off)
             const Icon = skillIcons[group.icon]
-            const isActive = active === i
+            const isFront = off === 0
             return (
               <div
-                className={`skill-card${isActive ? ' active' : ''}`}
                 key={group.title}
-                role="button"
-                tabIndex={0}
-                aria-pressed={isActive}
-                onClick={() => toggle(i)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault()
-                    toggle(i)
-                  }
+                className={`deck-card${isFront ? ' front' : ''}`}
+                style={{
+                  transform: `translateX(calc(-50% + ${off * 56}%)) scale(${1 - abs * 0.08})`,
+                  opacity: abs > 2 ? 0 : 1 - abs * 0.34,
+                  zIndex: n - abs,
+                  pointerEvents: abs > 2 ? 'none' : 'auto',
                 }}
+                onClick={() => !isFront && setActive(i)}
+                aria-hidden={abs > 2}
               >
-                <div className="sc-top">
-                  <span className="sc-ico">{Icon && <Icon />}</span>
-                  <h3>{group.title}</h3>
-                  <span className="sc-toggle" aria-hidden="true">
-                    {isActive ? '−' : '+'}
-                  </span>
+                <div className="dc-head">
+                  <span className="dc-ico">{Icon && <Icon />}</span>
+                  <div className="dc-titles">
+                    <span className="dc-count">
+                      {i + 1} / {n}
+                    </span>
+                    <h3>{group.title}</h3>
+                  </div>
                 </div>
-                <div className="skill-bars">
+                <div className="dc-tags">
                   {group.items.map((s) => (
-                    <div className="skill-row" key={s.name}>
-                      <div className="skill-row-top">
-                        <span>{s.name}</span>
-                        <span className="pct">{s.level}%</span>
-                      </div>
-                      <div className="bar">
-                        <span className="bar-fill" style={{ '--lvl': `${s.level}%` }} />
-                      </div>
-                    </div>
+                    <button
+                      className="dc-tag"
+                      key={s.name}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        if (isFront) setModal({ group, skill: s })
+                        else setActive(i)
+                      }}
+                    >
+                      <span className="dc-dot">•</span> {s.name}
+                    </button>
                   ))}
                 </div>
               </div>
             )
           })}
         </div>
+
+        <div className="deck-dots">
+          {skills.map((g, i) => (
+            <button
+              key={g.title}
+              className={`dot-btn${i === active ? ' on' : ''}`}
+              aria-label={`Show ${g.title}`}
+              aria-current={i === active}
+              onClick={() => setActive(i)}
+            />
+          ))}
+        </div>
       </div>
+
+      {modal && (
+        <div className="skill-modal-overlay" onClick={() => setModal(null)}>
+          <div
+            className="skill-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${modal.skill.name} proficiency`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="sm-close" onClick={() => setModal(null)} aria-label="Close">
+              ×
+            </button>
+            <span className="sm-cat">{modal.group.title}</span>
+            <h3 className="sm-name">{modal.skill.name}</h3>
+            <div className="sm-bar">
+              <span className="sm-fill" style={{ '--lvl': `${modal.skill.level}%` }} />
+            </div>
+            <div className="sm-foot">
+              <span className="sm-label">{levelLabel(modal.skill.level)}</span>
+              <span className="sm-pct">{modal.skill.level}%</span>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
