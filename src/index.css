@@ -534,6 +534,24 @@ section { padding-block: 64px; scroll-margin-top: 82px; }
 }
 .quote-card p.big b { color: var(--accent); font-weight: 600; }
 .chip-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.learning-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 22px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+}
+.learning-note b { color: var(--accent); font-weight: 600; }
+.learning-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  box-shadow: 0 0 0 0 var(--accent-2);
+  animation: pulse 2s infinite;
+}
 .chip {
   font-size: 13px;
   font-weight: 500;

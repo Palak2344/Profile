@@ -13,6 +13,7 @@ export const profile = {
   location: 'Bhopal, Madhya Pradesh, India',
   email: 'palakchoudhary0906@gmail.com',
   phone: '+91-7000459854',
+  learning: 'NestJS',
   github: 'https://github.com/Palak2344/Profile',
   linkedin: 'https://www.linkedin.com/in/palak-choudhary-ab5236237/',
   // Resume PDF served from /public — opens in a new tab or downloads
@@ -102,7 +103,7 @@ export const skills = [
 export const experience = [
   {
     role: 'Full Stack Developer Intern',
-    when: 'Feb 2026 — Present',
+    when: 'Feb 2026 — Sep 2026',
     org: 'IIFETECH Pvt. Ltd.',
     orgMeta: 'Bhopal, MP',
     points: [

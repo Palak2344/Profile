@@ -1,4 +1,4 @@
-import { about } from '../data'
+import { about, profile } from '../data'
 import { useReveal } from '../hooks'
 
 export default function About() {
@@ -14,9 +14,9 @@ export default function About() {
           <span className="mark">&ldquo;</span>
           <p className="big">
             Full Stack <b>MERN Developer</b> skilled in React frontends and Node/Express backends,
-            with hands-on experience in database design and API integration. Currently building{' '}
-            <b>CRM systems, dashboards, and an AI chatbot in production</b> — focused on clean,
-            maintainable code for real-world applications.
+            with hands-on experience in database design and API integration. Most recently built{' '}
+            <b>CRM systems, dashboards, and an AI chatbot in production</b> at IIFETECH — focused on
+            clean, maintainable code for real-world applications.
           </p>
           <div className="chip-row">
             {about.chips.map((c) => (
@@ -25,6 +25,11 @@ export default function About() {
               </span>
             ))}
           </div>
+          {profile.learning && (
+            <p className="learning-note">
+              <span className="learning-dot" /> Currently learning <b>{profile.learning}</b>
+            </p>
+          )}
         </div>
       </div>
     </section>
